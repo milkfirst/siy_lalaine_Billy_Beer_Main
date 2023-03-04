@@ -1,0 +1,151 @@
+/* 
+
+    CSS Guide
+
+    MOBILE (less than 560px)
+    1. General Styles
+    2. Navigation Bar
+    3. 
+    4. 
+    5. 
+    6. 
+
+    DESKTOP (more than 561px)
+    A. Navigation Bar
+    B.
+
+*/
+
+/* 1. ---General Styles--- */
+
+*,
+*::before,
+*::after    {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* 2. NAVIGATION BAR */
+.nav    {
+    border-bottom: 1px;
+}
+
+.nav__toggle    {
+    position: absolute;
+    cursor: pointer;
+    margin: 0rem 0rem;
+    right: 0;
+}
+
+.nav__toggle img    {
+    width: 2rem;
+    margin-right: 1rem;
+}
+
+.nav__toggle .close {
+    display: none;
+    margin-top: 0.5rem;
+}
+
+.nav__toggle .menu  {
+    margin-top: 0.5rem;
+}
+
+.nav__checkbox  {
+    display: none;
+}
+
+.nav__menu  {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    margin: 1rem;
+}
+
+.nav__menu li   {
+    list-style: none;
+    display: none;
+}
+
+.nav__menu a    {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: #1D324C;
+}
+
+.nav__menu a:hover  {
+    color: orange;
+    transition: 0.5s;
+}
+
+.nav__menu li:first-child   {
+    display: block;
+}
+
+.nav__menu li:last-child   {
+    margin-bottom: 1rem;
+}
+
+/* the checkbox functionality */
+#nav__checkbox:checked ~ ul.nav__menu li    {
+    display: block;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .close   {
+    display: block;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .menu    {
+    display: none;
+}
+
+.headerimage    {
+    width: 100%;
+}
+
+
+/* DESKTOP VIEW */
+@media screen and (min-width: 561px)    {
+
+    /* A. NAVIGATION BAR */
+    .nav__menu a    {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+      
+    .nav__menu {
+        flex-direction: row;
+        gap: 0rem;
+        margin-right: 4rem;
+    }
+      
+    .nav__menu li {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav__menu li:first-child   {
+        margin-right: auto;
+    }
+
+    .headerimage    {
+        width: 50%;
+    }
+}
